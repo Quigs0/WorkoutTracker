@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete Task
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 border bg-light">
+                <h2 class="text-center mt-3 text-danger">Delete Goal</h2>
+                <hr>
+                <form method="POST" action="{% url 'deleteGoals' my_goals.id %}">
+                    {% csrf_token %}
+                    <h5 class="text-center"><strong>Are you sure you want to delete this goal?</strong></h5>
+                    <hr>
+                    <div class="container text-center">
+                        <a href="{% url 'goals' %}" class="btn btn-info">Go Back</a>
+                        <button type="submit" class="btn btn-danger">Delete!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    My Goals
+{% endblock %}
+
+{% block body %}
+    <div class="container bg-light border shadow rounded">
+        <div class="container pt-2">
+            <div class="row justify-content-center">
+                <div class="col-md-3 pt-4">
+                    <h2 class="text-center pt-2 pb-2 pl-1 pr-1">My Goals</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Weight</th>
+                    <th scope="col">Goal Weight</th>
+                    <th scope="col">1 Mile Time</th>
+                    <th scope="col">Bench Press Reps</th>
+                    <th scope="col">Weight</th>
+                    <th scope="col">Squat Reps</th>
+                    <th scope="col">Weight</th>
+                    <th scope="col">Deadlift Reps</th>
+                    <th scope="col">Weight</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for goal in my_goals %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ goal.date }}</td>
+                        <td>{{ goal.current_Weight }}</td>
+                        <td>{{ goal.goal_Weight }}</td>
+                        <td>{{ goal.one_Mile_Time }}</td>
+                        <td>{{ goal.bench_Press_Reps }}</td>
+                        <td>{{ goal.bench_Press_Weight }}</td>
+                        <td>{{ goal.squat_Reps }}</td>
+                        <td>{{ goal.squat_Weight }}</td>
+                        <td>{{ goal.deadlift_Reps }}</td>
+                        <td>{{ goal.deadlift_Weight }}</td>
+                        <td>
+                            <a href="{% url 'updateGoals' goal.id %}" class="update-icon">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'deleteGoals' goal.id %}" class="delete-icon">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Fitness Tracker
+{% endblock %}
+
+{% block body %}
+    <div class="container bg-white border rounded shadow mb-5">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <h1 class="text-center p-2"><ins>Fitness Redefined.</ins></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row align-items-center bg-white border p-2">
+                <div class="col">
+                    <h2>Track your fitness.</h2>
+                    <p>Our fitness tracker allows you to be able to be in charge of <strong>your</strong> health, without the fuss and worry that traditional workout plans entail.</p>
+                </div>
+                <div class="col">
+                    <img src="static/images/gigachad.jpg" class="img-fluid float-end rounded border m-1 shadow" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row align-items-center bg-white border p-2">
+                <div class="col">
+                    <h2>Create goals.</h2>
+                    <p>Keep track of your body weight, bench press, squat, and deadlift reps and max weight.</p>
+                </div>
+                <div class="col">
+                    <img src="static/images/squat.jpg" width="259" class="img-fluid float-end rounded border m-1 shadow" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row align-items-center bg-white border p-2">
+                <div class="col">
+                    <h2>Keep grinding.</h2>
+                    <p>See your progress and evolve your fitness plan.</p>
+                </div>
+                <div class="col">
+                    <img src="static/images/heartrate.jpg" width="259" class="img-fluid float-end rounded border m-1 shadow" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 mb-5">
+            <div class="row align-items-center bg-white border p-2">
+                <div class="col">
+                    <h2 class="pb-2">Feeling unmotivated?</h2>
+                    <h5 id="text">Let us choose your workout today.</h5>
+                    <button id="jsButton" class="btn btn-info pb-2">Click Here To Start</button>
+                </div>
+                <div class="col">
+                    <img src="static/images/garfield.jpg" class="img-fluid float-end rounded border m-1 shadow" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

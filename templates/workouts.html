@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Workouts List
+{% endblock %}
+
+{% block body %}
+    <div class="container bg-light border shadow rounded">
+        <div class="container pt-2">
+            <div class="row justify-content-center">
+                <div class="col-md-3 pt-4">
+                    <h2 class="text-center pt-2 pb-2 pl-1 pr-1">My Workouts</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Workout</th>
+                    <th scope="col">Calories Burned</th>
+                    <th scope="col">Completed?</th>
+                    <th scope="col">Time Created</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for workout in my_workouts %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ workout.exercise_name }}</td>
+                        <td>{{ workout.calories }}</td>
+                        <td>{{ workout.completed }}</td>
+                        <td>{{ workout.date }}</td>
+                        <td>
+                            <a href="{% url 'update' workout.id %}" class="update-icon">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'delete' workout.id %}" class="delete-icon">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
